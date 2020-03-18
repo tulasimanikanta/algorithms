@@ -2,7 +2,7 @@ package com.practice.alg;
 
 import java.util.stream.IntStream;
 
-public class Permutattions_1 {
+public class Permutattions {
 
     public static void main(String[] s) {
        String charString = "ABCD";
