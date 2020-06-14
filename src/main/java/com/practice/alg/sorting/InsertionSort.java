@@ -4,24 +4,26 @@ import java.util.Arrays;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] ints = new int[]{6,4,7,1,2};
-        Arrays.stream(ints).boxed().forEach(System.out::print);
+        int[] testIntArray = new int[]{6,4,7,1,2,12,3,42,324,23,0};
+        Arrays.stream(testIntArray).boxed()
+                .forEach(element -> System.out.print(element + "\t"));
         System.out.println();
-        for (int i = 0; i < ints.length; i++) {
+        for (int i = 0; i < testIntArray.length; i++) {
             int selectedPosition = i; //Get current picked element position
             for (int j = i; j >= 0; j--) { // Loop back from the selected element position and find out proper place
-               if (ints[j] > ints[i]) {
+               if (testIntArray[j] > testIntArray[i]) {
                    selectedPosition = j;
                }
             }
             if (i > selectedPosition) {
-                int selectedElement = ints[i];// store selected element
-                shiftPositionsByOne(ints, selectedPosition, i); // move elements one position at a time
-                ints[selectedPosition] = selectedElement;//put element to the selected position
+                int selectedElement = testIntArray[i];// store selected element
+                shiftPositionsByOne(testIntArray, selectedPosition, i); // move elements one position at a time
+                testIntArray[selectedPosition] = selectedElement;//put element to the selected position
             }
         }
 
-        Arrays.stream(ints).boxed().forEach(System.out::print);
+        Arrays.stream(testIntArray).boxed()
+                .forEach(element -> System.out.print(element + "\t"));
     }
 
     private static void shiftPositionsByOne(int[] ints, int startingPosition, int endingPosition) {
